@@ -120,14 +120,14 @@
     navigationFrame = null;
     const navHeight = navElement?.offsetHeight || 74;
     const readingLine = window.scrollY + navHeight + Math.min(window.innerHeight * 0.24, 180);
-    let activeItem = sectionNavigation[0] || null;
+    let activeItem = null;
 
     sectionNavigation.forEach((item) => {
       if (item.section.offsetTop <= readingLine) activeItem = item;
     });
 
     sectionNavigation.forEach(({ link }) => {
-      const isActive = link === activeItem.link;
+      const isActive = Boolean(activeItem && link === activeItem.link);
       link.classList.toggle('active', isActive);
       if (isActive) link.setAttribute('aria-current', 'location');
       else link.removeAttribute('aria-current');

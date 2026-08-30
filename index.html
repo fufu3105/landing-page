@@ -13,7 +13,7 @@
   <link rel="icon" href="assets/images/logo/Only-IRIS-logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Saira:wght@800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="assets/js/main.js" defer></script>
 </head>
@@ -41,14 +41,31 @@
   </header>
 
   <main id="main-content">
-    <!-- ===================== HERO ===================== -->
+    <!-- ===================== INTRO ===================== -->
+    <section class="intro" aria-labelledby="intro-title" data-nav-tone="light">
+      <div class="container intro-inner">
+        <!-- <p class="intro-kicker"><span aria-hidden="true"></span>Indoor air quality, intelligently supervised</p> -->
+        <h1 class="intro-brand" id="intro-title">
+          <svg class="intro-eye" viewBox="0 0 200 120" aria-hidden="true">
+            <path fill="currentColor" fill-rule="evenodd" d="M2 60C23 20 58 0 100 0s77 20 98 60c-21 40-56 60-98 60S23 100 2 60Zm132 0a34 34 0 1 1-68 0 34 34 0 0 1 68 0Z"/>
+            <circle cx="100" cy="60" r="21" fill="currentColor"/>
+          </svg>
+          <span>IRIS</span>
+        </h1>
+        <p class="intro-full-name">Intelligent Real-time Indoor Air Quality Supervision</p>
+        <a class="scroll-cue" href="#overview" aria-label="Scroll down to the IRIS overview">
+          <span>Discover IRIS</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 5v14M6.5 13.5 12 19l5.5-5.5"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===================== OVERVIEW ===================== -->
     <section class="hero" id="overview">
       <div class="container hero-inner">
         <div class="hero-copy">
           <p class="eyebrow">Overview</p>
-          <p class="hero-brand">IRIS</p>
-          <p class="hero-full-name">Intelligent Real-time Indoor Air Quality Supervision</p>
-          <h1>Turning physical measurements into <span>intelligent air-quality insights.</span></h1>
+          <h2 class="hero-title">Turning physical measurements into <span>intelligent air-quality insights.</span></h2>
           <p class="hero-description">IRIS is a vision-driven indoor air-quality supervision system that integrates camera-based measurement, environmental sensors, physics-based modeling, and AI analytics within a unified Digital Twin pipeline.</p>
           <p class="hero-support">By connecting heterogeneous measurement sources, IRIS aims to provide more reliable monitoring, early anomaly awareness, short-term forecasting, and actionable decision support.</p>
           <div class="hero-actions"><a href="#how-it-works" class="btn btn-primary">Explore How IRIS Works</a><a href="#product" class="btn btn-outline">View Product Concept</a></div>
