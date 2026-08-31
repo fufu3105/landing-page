@@ -8,7 +8,7 @@
   <strong>Intelligent Real-time Indoor Air Quality Supervision</strong>
 </p>
 
-IRIS is a graduation thesis project at Ho Chi Minh City University of Technology (HCMUT), VNU-HCM. The project explores how camera-derived measurements, environmental sensors, physics-based modeling, and AI analytics can be connected through a Digital Twin pipeline for indoor air-quality supervision.
+IRIS is a graduation thesis project at Ho Chi Minh City University of Technology (HCMUT), VNU-HCM. The project explores how camera-derived measurements, environmental sensors, physics-based modeling and AI analytics can be connected through a Digital Twin pipeline for indoor air-quality supervision.
 
 This repository contains the public landing page for the project.
 
@@ -46,6 +46,3 @@ IRIS focuses on monitoring, analytics, forecasting, alerts, recommendations and 
 Faculty of Computer Science & Engineering<br>
 Ho Chi Minh City University of Technology — VNU-HCM
 
-## Project Status
-
-IRIS is a research-driven engineering project under development. Interface values and product screens shown on the landing page are illustrative and should not be interpreted as validated experimental results.
