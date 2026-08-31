@@ -320,6 +320,7 @@ p { text-wrap: pretty; }
 .approach-connector { display: grid; place-items: center; color: var(--primary); background: var(--primary-tint); font: 500 22px/1 var(--font-mono); }
 .approach-manifesto { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 22px; margin-top: 46px; color: var(--text); font: 600 clamp(20px, 2.5vw, 28px)/1.3 var(--font-display); text-align: center; }
 .approach-manifesto span:nth-child(2) { color: var(--primary); }.approach-manifesto span:nth-child(3) { color: var(--accent-teal-dark); }
+.hero-manifesto { grid-column: 1 / -1; margin-top: 0; }
 
 /* =========================================================
    WHY IRIS / VALIDATION DIAGRAM
@@ -347,6 +348,42 @@ p { text-wrap: pretty; }
 .positioning-statement { max-width: 950px; margin: 46px auto 0; padding-top: 28px; border-top: 1px solid rgba(255, 255, 255, .12); color: #D8E2F2; font-size: 16px; text-align: center; }
 
 /* =========================================================
+   WHY IRIS — MERGED VALUE & CAPABILITY JOURNEY
+========================================================= */
+.why-merged-section .section-head { max-width: 850px; }
+.section-anchor { display: block; }
+.why-value-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.why-value-card {
+  --why-accent: var(--accent-teal);
+  position: relative; padding: 25px 22px;
+  border: 1px solid rgba(255, 255, 255, .13); border-top: 3px solid var(--why-accent);
+  border-radius: var(--radius-md); background: rgba(255, 255, 255, .055);
+  box-shadow: 0 16px 34px -28px rgba(0, 0, 0, .85);
+  transition: border-color .22s ease, background .22s ease, transform .22s ease;
+}
+.why-value-card:nth-child(2) { --why-accent: var(--accent-sky); }
+.why-value-card:nth-child(3) { --why-accent: #8EA2FF; }
+.why-value-card:nth-child(4) { --why-accent: var(--accent-teal); }
+.why-value-card:hover { transform: translateY(-4px); border-color: color-mix(in srgb, var(--why-accent) 58%, rgba(255, 255, 255, .13)); background: rgba(255, 255, 255, .075); }
+.why-value-card:not(:last-child)::after {
+  content: '→'; position: absolute; top: 50%; right: -21px; z-index: 2;
+  width: 20px; color: var(--why-accent); font: 600 17px/1 var(--font-mono); text-align: center;
+  transform: translateY(-50%);
+}
+.why-value-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.why-value-meta span { color: var(--why-accent); font: 700 12px/1 var(--font-mono); letter-spacing: .08em; }
+.why-value-meta em { color: #AFC0DC; font: normal 650 9px/1.2 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; }
+.why-value-card h3 { margin: 35px 0 13px; color: #fff; font-size: 20px; }
+.why-capability { min-height: 31px; margin-bottom: 13px; color: var(--why-accent); font: 700 10px/1.5 var(--font-mono); letter-spacing: .065em; text-transform: uppercase; }
+.why-value-description { color: #B8C7DD; font-size: 13.5px; line-height: 1.7; }
+.why-closing {
+  max-width: 980px; margin: 46px auto 0; padding: 26px 34px;
+  border: 1px solid rgba(0, 196, 159, .22); border-radius: var(--radius-md);
+  color: #fff; background: linear-gradient(90deg, rgba(0, 196, 159, .1), rgba(56, 189, 248, .055));
+  font: 650 clamp(21px, 2.5vw, 30px)/1.35 var(--font-display); text-align: center;
+}
+
+/* =========================================================
    CORE CAPABILITIES
 ========================================================= */
 .feature-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
@@ -370,16 +407,50 @@ p { text-wrap: pretty; }
 .role-detail.provides { flex: 1; background: color-mix(in srgb, var(--primary-tint) 72%, var(--surface)); }.role-detail.provides h4 { color: var(--accent-teal-dark); }
 
 /* =========================================================
+   WHO IRIS IS FOR
+========================================================= */
+.audience-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.audience-card {
+  --audience-accent: var(--primary);
+  position: relative; overflow: hidden; padding: 27px;
+  border: 1px solid color-mix(in srgb, var(--audience-accent) 22%, var(--border));
+  border-top: 3px solid var(--audience-accent); border-radius: var(--radius-md);
+  background: linear-gradient(145deg, color-mix(in srgb, var(--audience-accent) 7%, var(--surface)), var(--surface) 42%);
+  box-shadow: var(--shadow-card);
+  transition: border-color .22s ease, box-shadow .22s ease, transform .22s ease;
+}
+.audience-card:nth-child(2) { --audience-accent: #1675A1; }
+.audience-card:nth-child(3) { --audience-accent: var(--accent-teal-dark); }
+.audience-card:hover { transform: translateY(-4px); border-color: color-mix(in srgb, var(--audience-accent) 48%, var(--border)); box-shadow: var(--shadow-hover); }
+.audience-meta { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.audience-index { color: var(--audience-accent); font: 700 12px/1 var(--font-mono); letter-spacing: .08em; }
+.audience-tag {
+  padding: 6px 10px; border-radius: 999px; color: var(--audience-accent);
+  background: color-mix(in srgb, var(--audience-accent) 11%, transparent);
+  font: 700 9px/1.2 var(--font-mono); letter-spacing: .075em; text-transform: uppercase;
+}
+.audience-card h3 { margin: 34px 0 8px; color: var(--text); font-size: 22px; }
+.audience-value { margin-bottom: 13px; color: var(--audience-accent); font: 650 16px/1.4 var(--font-display); }
+.audience-description { color: var(--muted); font-size: 14px; line-height: 1.7; }
+.audience-context {
+  display: grid; grid-template-columns: auto 1fr; gap: 22px; align-items: center;
+  margin-top: 24px; padding: 18px 22px; border: 1px solid color-mix(in srgb, var(--primary) 18%, var(--border));
+  border-radius: var(--radius-md); background: color-mix(in srgb, var(--surface) 84%, var(--primary-tint));
+}
+.audience-context > span { color: var(--accent-teal-dark); font: 700 9px/1.3 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+.audience-context p { color: var(--muted); font-size: 13.5px; }
+
+/* =========================================================
    HOW IT WORKS
 ========================================================= */
 .workflow { display: grid; grid-template-columns: repeat(5, 1fr); border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface); box-shadow: var(--shadow-card); }
 .workflow li { position: relative; min-height: 250px; padding: 25px 19px; }
 .workflow li + li { border-left: 1px solid var(--border); }
-.workflow li:not(:last-child)::after { content: '→'; position: absolute; top: 29px; right: -10px; z-index: 2; display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; color: var(--primary); background: var(--surface); font: 600 12px/1 var(--font-mono); }
+.workflow li:not(:last-child)::after { content: '→'; position: absolute; top: 25px; right: -14px; z-index: 2; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; color: var(--primary); background: var(--surface); font: 700 18px/1 var(--font-mono); }
 .workflow-number { display: block; margin-bottom: 55px; color: var(--accent-teal-dark); font: 700 12px/1 var(--font-mono); }
 .workflow h3 { margin-bottom: 9px; color: var(--primary); font-size: 18px; }.workflow p { color: var(--muted); font-size: 13px; }
 .workflow-summary { margin-top: 28px; color: var(--text); font: 600 clamp(15px, 2vw, 19px)/1.5 var(--font-mono); text-align: center; }
-.workflow-summary span { margin-inline: 8px; color: var(--accent-teal-dark); }
+.workflow-summary span { margin-inline: 8px; color: var(--accent-teal-dark); font-size: 1.35em; line-height: 1; }
 
 /* =========================================================
    PRODUCT PREVIEW & MOCKUPS
@@ -499,11 +570,14 @@ footer { padding-block: 60px 28px; border-top: 1px solid var(--border); backgrou
 :root[data-theme='dark'] .validation-output h3 { color: #AAB8FF; }
 :root[data-theme='dark'] .transition-statement { color: #AAB8FF; }
 :root[data-theme='dark'] .timeline-marker { background: var(--bg); }
+:root[data-theme='dark'] .audience-card:nth-child(2) { --audience-accent: var(--accent-sky); }
 
 /* =========================================================
    RESPONSIVE
 ========================================================= */
 @media (max-width: 1080px) {
+  .why-value-grid { grid-template-columns: repeat(2, 1fr); }
+  .why-value-card::after { display: none; }
   .nav-links {
     position: fixed; top: 82px; right: 0; left: 0;
     display: flex; flex-direction: column; align-items: stretch; gap: 0;
@@ -535,11 +609,12 @@ footer { padding-block: 60px 28px; border-top: 1px solid var(--border); backgrou
   .validation-core, .validation-output { width: min(100%, 620px); margin-inline: auto; }
   .feature-grid { grid-template-columns: 1fr 1fr; }
   .users-grid { grid-template-columns: 1fr; }
+  .audience-grid { grid-template-columns: 1fr; }
   .workflow { grid-template-columns: 1fr; }
   .workflow li { min-height: auto; padding: 24px 24px 24px 74px; }
   .workflow li + li { border-top: 1px solid var(--border); border-left: 0; }
   .workflow-number { position: absolute; top: 27px; left: 22px; margin: 0; }
-  .workflow li:not(:last-child)::after { top: auto; right: auto; bottom: -11px; left: 25px; transform: rotate(90deg); }
+  .workflow li:not(:last-child)::after { top: auto; right: auto; bottom: -15px; left: 21px; transform: rotate(90deg); }
   .preview-grid { grid-template-columns: repeat(3, minmax(min(82vw, 540px), 1fr)); }
   .architecture-flow { grid-template-columns: 1fr; }
   .architecture-flow > i { height: 28px; transform: rotate(90deg); }
@@ -594,6 +669,13 @@ footer { padding-block: 60px 28px; border-top: 1px solid var(--border); backgrou
   .feature-grid { grid-template-columns: 1fr; }
   .feature-card { min-height: auto; }
   .feature-number { margin-bottom: 30px; }
+  .why-value-grid { grid-template-columns: 1fr; }
+  .why-value-card { padding: 23px; }
+  .why-capability { min-height: 0; }
+  .why-closing { margin-top: 32px; padding: 22px 19px; }
+  .audience-card { padding: 23px; }
+  .audience-context { grid-template-columns: 1fr; gap: 7px; padding: 17px 18px; }
+  .audience-context > span { white-space: normal; }
   .workflow-summary { display: flex; align-items: center; flex-direction: column; gap: 4px; }
   .workflow-summary span { transform: rotate(90deg); }
   .preview-grid { grid-template-columns: repeat(3, minmax(calc(100vw - 48px), 1fr)); }
