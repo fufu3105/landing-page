@@ -384,7 +384,7 @@
         || time < productPauseUntil;
 
       if (!isPaused) {
-        productTrack.scrollLeft += elapsed * 0.05;
+        productTrack.scrollLeft += elapsed * 0.1;
 
         const firstCard = productTrack.firstElementChild;
         if (firstCard) {
